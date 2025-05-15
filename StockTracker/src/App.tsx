@@ -1,10 +1,8 @@
-
+import Sidebar from './components/sidebar/sidebar.tsx';
 
 function App() {
   return (
-    <div>
-      <h1>Mi App</h1>
-    </div>
+     <Sidebar />
   );
 }
 
