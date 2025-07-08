@@ -1,9 +1,8 @@
 import styles from "../../styles/Dashboard.module.css";
 import Cards from "../cardspreview/Cards";
-import Header from "../header/Header";
 import Orders from "../Ordes/Ordes";
 import ProductsTable from "../ProductsTable/ProductsTable";
-import Sidebar from "../sidebar/sidebar";
+
 
 /**
  * Componente Dashboard - El diseño principal de la aplicación
@@ -29,14 +28,8 @@ import Sidebar from "../sidebar/sidebar";
 export default function Dashboard() {
   return (
     <div className={styles.dashboard}>
-      {/* Componente Sidebar - Contiene el menú de navegación y acciones rápidas */}
-      <Sidebar />
-      
       {/* Área de Contenido Principal - Contiene todo el contenido dinámico */}
       <div className={styles.mainContent}>
-        {/* Componente Header - Barra superior con controles de usuario */}
-        <Header />
-        
         {/* Contenedor de Contenido - Envuelve las secciones principales */}
         <div className={styles.content}>
           {/* Grid de Contenido - Diseño responsivo de dos columnas */}

@@ -106,10 +106,10 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.3rem;
   padding: 10px;
+  margin: 0.8rem;
   color: white;
   display: flex;
-  flex-direction: row; /* Fila para icono a la izquierda */
-  align-items: flex-start; /* Alinear arriba */
+ 
   gap: 0; /* Eliminamos el gap entre icono y contenido */
   transition: all 0.3s ease;
 }
@@ -133,7 +133,7 @@
 }
 
 .cardContent {
-  display: flex;
+  display: absolute;
   flex-direction: column; /* Apila todo verticalmente */
   flex: 1; /* Ocupa el resto del espacio */
   margin-top: 42px; /* Empuja el contenido hacia abajo */
@@ -149,7 +149,7 @@
 }
 
 .cardValue {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   margin-bottom: 12px;
   line-height: 1.1;
@@ -157,7 +157,7 @@
 }
 
 .cardValueSub {
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 500;
   opacity: 0.8;
 }
@@ -191,13 +191,6 @@
     padding: 20px;
   }
 
-  .cardValue {
-    font-size: 24px;
-  }
-
-  .cardValueSub {
-    font-size: 18px;
-  }
 }
 
 @media (max-width: 480px) {

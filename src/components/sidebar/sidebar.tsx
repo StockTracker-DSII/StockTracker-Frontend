@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import {
   CirclePlus,
@@ -25,16 +27,30 @@ import styles from "../../styles/sidebar.module.css";
  * -
  */
 
-export default function Sidebar() {
-  // Estado para controlar qué ítem está activo
-  const [activeItem, setActiveItem] = useState(-1); // -1 significa ninguno seleccionado inicialmente
+const menuItems = [
+  { icon: CirclePlus, label: "Add Item", key: "add-item" },
+  { icon: Combine, label: "Edit Product", key: "edit-product" },
+  { icon: Edit, label: "Inventory", key: "inventory" },
+  { icon: List, label: "List Products", key: "list-products" },
+  { icon: CreditCard, label: "Billing", key: "billing" },
+  { icon: Clock, label: "Record", key: "record" },
+  { icon: FileText, label: "Generate report", key: "generate-report" },
+  { icon: Users, label: "Users", key: "users" },
+  { icon: Database, label: "Tables", key: "tables" },
+  { icon: Settings, label: "Menu settings", key: "menu-settings" },
+];
 
-  /**
-   * Maneja el clic en un ítem del menú
-   * @param {number} index - Índice del ítem seleccionado
-   */
-  const handleItemClick = (index: number) => {
+interface SidebarProps {
+  onMenuClick: (menuKey: string) => void;
+  activeView: string;
+}
+
+export default function Sidebar({ onMenuClick, activeView }: SidebarProps) {
+  const [activeItem, setActiveItem] = useState(-1);
+
+  const handleItemClick = (index: number, key: string) => {
     setActiveItem(index);
+    onMenuClick(key);
   };
 
   return (
@@ -53,6 +69,7 @@ export default function Sidebar() {
           <span className={styles.logoSubtitle}>DIGITAL</span>
         </div>
       </div>
+
       {/* Patrón decorativo de fondo con círculos */}
       <div className={styles.backgroundPattern}>
         <div className={styles.circle1}></div>
@@ -61,53 +78,33 @@ export default function Sidebar() {
         <div className={styles.circle4}></div>
         <div className={styles.circle5}></div>
       </div>
+
       {/* Contenedor principal del menú */}
       <div className={styles.menuItems}>
-        {/* Botón para agregar ítem */}
-        <button
-          className={`${styles.addButton} ${
-            activeItem === 0 ? styles.active : ""
-          }`}
-          onClick={() => handleItemClick(0)}
-        >
-          <CirclePlus className={styles.iconBtn} size={18} />
-          <span className={styles.textBtn}>Add Item</span>
-        </button>
-        {/* Botón para editar producto */}
-        <button
-          className={`${styles.addButton} ${
-            activeItem === 1 ? styles.active : ""
-          }`}
-          onClick={() => handleItemClick(1)}
-        >
-          <Combine className={styles.iconBtn} size={18} />
-          <span className={styles.textBtn}>Edit Product</span>
-        </button>
-        {/* Lista de opciones de navegación */}
+        {/* Botones principales y menú de navegación */}
         <div className={styles.navItems}>
-          {[
-            { icon: Edit, label: "Inventory" },
-            { icon: List, label: "List Products" },
-            { icon: CreditCard, label: "Billing" },
-            { icon: Clock, label: "Record" },
-            { icon: FileText, label: "report" },
-            { icon: Users, label: "Users" },
-            { icon: Database, label: "Tables" },
-            { icon: Settings, label: "Menu settings" },
-          ].map((item, index) => (
+          {menuItems.map((item, index) => (
             <div
               key={index}
-              className={`${styles.navItem} ${
-                activeItem === index + 2 ? styles.active : ""
+              className={`${index < 2 ? styles.addButton : styles.navItem} ${
+                activeItem === index || activeView === item.key
+                  ? styles.active
+                  : ""
               }`}
-              onClick={() => handleItemClick(index + 2)}
+              onClick={() => handleItemClick(index, item.key)}
             >
-              <item.icon size={18} />
-              <span>{item.label}</span>
+              <item.icon
+                className={index < 2 ? styles.iconBtn : ""}
+                size={18}
+              />
+              <span className={index < 2 ? styles.textBtn : ""}>
+                {item.label}
+              </span>
             </div>
           ))}
         </div>
       </div>
+
       {/* Botón de ayuda en la parte inferior */}
       <div className={styles.helpIcon}>
         <div className={styles.iconCircle}>

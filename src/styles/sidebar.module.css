@@ -52,6 +52,7 @@
 
 .sidebar {
   width: 180px;
+  height: 100vh;
   background: linear-gradient(135deg, #005a8a 0%, #0072b0 100%);
   color: white;
   display: flex;
@@ -344,7 +345,7 @@
   animation: circleFloat2 9s ease-in-out infinite reverse;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .sidebar {
     width: 160px;
   }
@@ -375,4 +376,4 @@
     left: 50%;
     transform: translateX(-50%);
   }
-}
+} */

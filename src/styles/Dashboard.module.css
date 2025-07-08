@@ -5,54 +5,57 @@
   font-size: 14px;
 }
 
-html, body {
+html,
+body {
+  overflow: hidden;
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 .dashboard {
   display: flex;
-  width: 100vw;
-  height: 100vh;
-  background-color: #D7E4EB;
-  overflow: hidden; 
+  background-color: #d7e4eb;
+  animation: fadeInUp 0.5s ease-out;
+  overflow: hidden;
+
 }
+
 
 .content {
   display: flex;
   flex-direction: column;
-  padding: 1rem; 
-  margin: 0.9rem; 
+  padding: 1rem;
+  margin: 0.9rem;
   border-radius: 0.4rem;
-  width: calc(100% - 2rem);
-  height: calc(100% - 2rem); 
+  width: calc(100% - 1.8rem);
+  height: calc(100% - 1.8rem);
   background-color: rgba(255, 255, 255, 0.4);
-  overflow: hidden; 
+  overflow: hidden;
+  flex: 1;
 }
+
 
 .mainContent {
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden; 
+  width: 100vw;
   /* border: #eb0c0c solid 2px; */
 }
 
 .contentGrid {
   display: flex;
   gap: 0.8rem;
-  padding: 0.2rem;
   flex: 1;
   min-height: 0;
-  overflow: hidden; 
+  overflow: hidden;
 }
+
 /* Contenido dentro de la seccione izquierda */
 .leftSection {
   flex: 2;
   min-width: 0;
-  overflow: auto; 
-  /* border: #9f2449 solid 2px; */
+  overflow: auto;
 }
 
 /* Contenido dentro de la seccione derecha */
@@ -61,11 +64,11 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  min-width: 0;
-  min-height: 0; 
-  overflow: auto;
-  /* border: #017e52 solid 2px; */
+  overflow: hidden;
+   min-height: 0;
+  /* border: 1px solid red; */ /* Para debug */
 }
+
 
 /* Contenido dentro de las secciones */
 .panel-content {
@@ -76,22 +79,28 @@ html, body {
 }
 
 .OrdersOverview {
+  flex: 7; 
+  min-height: 0; 
+  overflow: auto;
   display: flex;
   flex-direction: column;
-  max-height: 70%;
   gap: 0.8rem;
   border-radius: 0.4rem;
+    min-height: 0;
+  /* border: 1px solid blue; */ /* Para debug */
 }
 
 .MetricsCards {
+  flex: 3; /* Ocupa el espacio restante (30%) */
+  min-height: 0; /* Importante para que funcione flex */
+  overflow: auto;
   display: flex;
   flex-direction: column;
-  height: 100%;
   gap: 0.8rem;
   padding: 0.5rem;
   border-radius: 0.4rem;
-  background-color: #0072B0;
-  overflow: hidden; /* Añadido para contener todo el contenido */
+  background-color: #0072b0;
+  /* border: 1px solid green; */ /* Para debug */
 }
 
 @media (max-width: 1024px) {
@@ -101,7 +110,7 @@ html, body {
 
   .rightPanel {
     flex-direction: row;
-    min-height: 200px; 
+    min-height: 200px;
   }
 }
 
