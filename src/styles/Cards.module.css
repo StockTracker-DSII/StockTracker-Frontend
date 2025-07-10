@@ -1,0 +1,269 @@
+.container {
+  background: linear-gradient(135deg, #005a8a 0%, #0072b0 100%);
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+  overflow: hidden;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5,
+.circle6 {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+}
+
+.circle1 {
+  width: 120px;
+  height: 120px;
+  top: 20px;
+  right: 20px;
+  opacity: 0.8; /* Mayor opacidad */
+  animation: circleFloat1 8s ease-in-out infinite;
+}
+
+.circle2 {
+  width: 80px;
+  height: 80px;
+  top: 40px;
+  right: 40px;
+  opacity: 0.6;
+  animation: circleFloat2 6s ease-in-out infinite;
+}
+
+.circle3 {
+  width: 150px;
+  height: 150px;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0.5;
+  animation: circleFloat3 10s ease-in-out infinite;
+}
+
+.circle4 {
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0.7;
+  animation: circleFloat1 7s ease-in-out infinite reverse;
+}
+
+.circle5 {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  opacity: 0.6;
+  animation: circleFloat2 9s ease-in-out infinite reverse;
+}
+
+.circle6 {
+  width: 280px;
+  height: 280px;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.4;
+  animation: circleFloat3 5s ease-in-out infinite;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px; /* Reducido de 24px */
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 4px; /* Añadido para evitar que las cards toquen los bordes */
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.3rem;
+  padding: 10px;
+  margin: 0.8rem;
+  color: white;
+  display: flex;
+ 
+  gap: 0; /* Eliminamos el gap entre icono y contenido */
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.cardIcon {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Evita que se reduzca */
+  backdrop-filter: blur(10px);
+  margin-right: 8px; /* Espacio a la derecha del icono */
+}
+
+.cardContent {
+  display: absolute;
+  flex-direction: column; /* Apila todo verticalmente */
+  flex: 1; /* Ocupa el resto del espacio */
+  margin-top: 42px; /* Empuja el contenido hacia abajo */
+  margin-left: -46px; /* (-20px icono -8px margin-right) para alinear con el borde */
+}
+
+.cardLabel {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cardValue {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.1;
+  color: white;
+}
+
+.cardValueSub {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.cardTrend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cardTrend svg {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .cardContent {
+    margin-top: 18px;
+    margin-left: -26px; /* Ajuste proporcional */
+  }
+
+  .cardTrend {
+    justify-content: center;
+  }
+}
+
+@keyframes circleFloat1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(10px, -10px) scale(1.05);
+  }
+}
+
+@keyframes circleFloat2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-8px, 8px) scale(0.95);
+  }
+}
+
+@keyframes circleFloat3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(5px, -5px) scale(1.02);
+  }
+}
+
+.circle1 {
+  animation: circleFloat1 8s ease-in-out infinite;
+}
+
+.circle2 {
+  animation: circleFloat2 6s ease-in-out infinite;
+}
+
+.circle3 {
+  animation: circleFloat3 10s ease-in-out infinite;
+}
+
+.circle4 {
+  animation: circleFloat1 7s ease-in-out infinite reverse;
+}
+
+.circle5 {
+  animation: circleFloat2 9s ease-in-out infinite reverse;
+}
+
+.circle6 {
+  animation: circleFloat3 5s ease-in-out infinite;
+}

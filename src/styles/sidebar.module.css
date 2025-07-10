@@ -1,0 +1,379 @@
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes circleFloat1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(5px, -5px) scale(1.05);
+  }
+}
+
+@keyframes circleFloat2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-4px, 4px) scale(0.98);
+  }
+}
+
+@keyframes circleFloat3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(3px, -3px) scale(1.02);
+  }
+}
+
+.sidebar {
+  width: 180px;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  position: relative;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  margin-bottom: 1.9rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.logoIcon {
+  width: 35px;
+  height: 40px;
+  margin-right: 0.3rem;
+}
+
+.logoImage {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.05);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoTitle {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.logoSubtitle {
+  font-size: 8px;
+  text-align: center;
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 0.7rem;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 0.5rem;
+  margin: 0 0.8rem 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.addButton.active {
+  background: rgba(123, 196, 241, 0.9);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.addButton:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.02);
+}
+
+.textBtn {
+  color: #0077b6;
+  font-weight: 500;
+}
+
+.iconBtn {
+  color: #005a8a;
+}
+
+.addButton svg {
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.addButton:hover svg {
+  transform: scale(1.1);
+}
+
+.navItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  animation: slideInScale 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.navItem:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.navItem:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.navItem:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.navItem:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.navItem:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.navItem:nth-child(6) {
+  animation-delay: 0.35s;
+}
+.navItem:nth-child(7) {
+  animation-delay: 0.4s;
+}
+.navItem:nth-child(8) {
+  animation-delay: 0.45s;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  transform: scale(1.02);
+}
+
+.navItem.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+
+.navItem.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: white;
+  border-radius: 0 3px 3px 0;
+  animation: activeSlide 0.3s ease-out;
+}
+
+@keyframes activeSlide {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 3px;
+    opacity: 1;
+  }
+}
+
+.navItem svg {
+  margin-right: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.navItem:hover svg {
+  transform: scale(1.1);
+  color: white;
+}
+
+.navItem.active svg {
+  transform: scale(1.1);
+  color: white;
+}
+
+.helpIcon {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.iconCircle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(0, 90, 138, 0.836);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.iconCircle:hover {
+  background-color: rgba(0, 90, 138, 1);
+  transform: scale(1.1);
+}
+
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5 {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+}
+
+.circle1 {
+  width: 120px;
+  height: 120px;
+  top: -30px;
+  right: -30px;
+  opacity: 0.6;
+  animation: circleFloat1 8s ease-in-out infinite;
+}
+
+.circle2 {
+  width: 80px;
+  height: 80px;
+  top: 20px;
+  right: 30px;
+  opacity: 0.5;
+  animation: circleFloat2 6s ease-in-out infinite;
+}
+
+.circle3 {
+  width: 150px;
+  height: 150px;
+  bottom: -40px;
+  left: -40px;
+  opacity: 0.4;
+  animation: circleFloat3 10s ease-in-out infinite;
+}
+
+.circle4 {
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.5;
+  animation: circleFloat1 7s ease-in-out infinite reverse;
+}
+
+.circle5 {
+  width: 50px;
+  height: 50px;
+  top: 70%;
+  left: 15px;
+  opacity: 0.4;
+  animation: circleFloat2 9s ease-in-out infinite reverse;
+}
+
+ @media (max-width: 768px) {
+  .sidebar {
+    width: 160px;
+  }
+
+  .logo {
+    padding: 0 1rem;
+  }
+
+  .addButton {
+    margin: 0 0.5rem 1rem;
+    padding: 0.3rem 0.4rem;
+  }
+
+  .navItem span {
+    display: none;
+  }
+
+  .navItem {
+    justify-content: center;
+    padding: 0.8rem 0;
+  }
+
+  .navItem svg {
+    margin-right: 0;
+  }
+
+  .helpIcon {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+} 
