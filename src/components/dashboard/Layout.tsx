@@ -6,6 +6,7 @@ import Header from "../header/Header";
 import Sidebar from "../sidebar/sidebar";
 import Dashboard from "./Dashboard";
 import Modal from "../Metricspreview/Modal";
+import GenerateReport from "../report/GenerateReport";
 
 export function Layout() {
   const [activeView, setActiveView] = useState("dashboard");
@@ -29,6 +30,8 @@ export function Layout() {
       case "inventory":
       case "users":
         return <Dashboard />;
+      case "generate-report":
+        return <GenerateReport />; 
       default:
         return <Dashboard />;
     }
