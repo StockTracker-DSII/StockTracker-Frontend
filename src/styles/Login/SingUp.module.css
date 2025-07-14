@@ -1,0 +1,452 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #ffffff; /* Color de fondo para los márgenes */
+}
+
+/* Banner Section - Altura fija 65vh */
+.bannerSection {
+  background: var(--ligth-color);
+  width: calc(100% - 40px); /* Ajuste por los márgenes */
+  height: 40vh;
+  margin: 20px;
+  border-radius: 0.4rem;
+  position: relative;
+  z-index: 1;
+  color: white;
+  overflow: hidden;
+}
+
+.backgroundContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floatingPaths {
+  position: absolute;
+  inset: 0;
+}
+
+.backgroundSvg {
+  width: 100%;
+  height: 100%;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Color de las líneas (blanco semitransparente) */
+}
+
+.header,
+.welcomeSection {
+  position: relative;
+  z-index: 2;
+}
+
+/* Footer Section - Altura fija 35vh */
+.footerSection {
+  background: #ffffff;
+  width: calc(100% - 40px);
+  height: vh;
+  margin: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Form Container - Posición ajustada */
+.formContainer {
+  position: absolute;
+  top: 58%; /* Centrado vertical */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 380px; /* Reducido de 450px */
+  z-index: 20;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+  padding: 20px 40px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.logoIcon {
+  width: 35px;
+  height: 40px;
+}
+
+.logoImage {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.logoSquare {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.logoText {
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+.downloadBtn {
+  background: white;
+  color: #2b6cb0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.downloadBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Welcome Section */
+.welcomeSection {
+  text-align: center;
+  margin-top: 3vh;
+  padding: 0 20px 8vh;
+}
+
+.welcomeTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.welcomeSubtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Form Card */
+.formCard {
+  background: white;
+  border-radius: 10px; /* Reducido de 12px */
+  padding: 1.8rem; /* Reducido de 2rem */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+}
+
+.formTitle {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Social Buttons */
+.socialButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.socialBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #4a5568;
+}
+
+.socialBtn:hover {
+  border-color: #cbd5e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  margin: 1rem 0;
+  position: relative;
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+.divider span {
+  background: white;
+  padding: 0 16px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #4299e1;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+/* Checkbox */
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0.5rem 0;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkboxCustom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked + .checkboxCustom {
+  background: #4299e1;
+  border-color: #4299e1;
+}
+
+.checkbox:checked + .checkboxCustom::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+}
+
+/* Sign Up Button */
+.signUpBtn {
+  background: #4299e1;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.signUpBtn:hover {
+  background: #3182ce;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.2);
+}
+
+.signInLink {
+  text-align: center;
+  color: #718096;
+  font-size: 13px;
+  margin-top: 1rem;
+}
+
+.signInLink a {
+  color: #4299e1;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signInLink a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 1rem; /* Antes era 2rem */
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  font-size: 0.7rem;
+  color: var(--light-text);
+  margin: 0;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.footerLink {
+  font-size: 0.7rem;
+  color: var(--light-text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footerLink:hover {
+  color: #4fd1c7;
+}
+
+.footer p {
+  color: #718096;
+  font-size: 0.7rem; /* Antes era 14px */
+  margin: 0.5rem 0; /* Antes no tenía margen definido o era mayor */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .formContainer {
+    top: 50%;
+    padding: 0 15px;
+  }
+
+  .formCard {
+    padding: 1.5rem;
+  }
+
+  /* Alturas fijas para mobile */
+  .bannerSection {
+    height: 55vh !important;
+  }
+
+  .footerSection {
+    height: 45vh !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcomeTitle {
+    font-size: 1.8rem;
+  }
+
+  .welcomeSubtitle {
+    font-size: 1rem;
+  }
+
+  .formCard {
+    padding: 1.25rem;
+  }
+}
