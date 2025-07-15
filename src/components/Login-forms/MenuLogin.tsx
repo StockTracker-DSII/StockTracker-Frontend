@@ -16,7 +16,7 @@ interface HeaderProps {
 export const MenuLogin: React.FC<HeaderProps> = ({
   logoText = 'STOCK TRACKER',
   navItems = [
-    // { label: 'DASHBOARD', href: '/dashboard' },
+    { label: 'DASHBOARD', href: '/dashboard' },
     { label: 'SIGN UP', href: '/signup' },
     { label: 'SIGN IN', href: '/signin' },
   ],

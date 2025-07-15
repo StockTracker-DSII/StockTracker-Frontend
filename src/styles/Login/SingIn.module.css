@@ -3,6 +3,7 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: #fff;
+  position: relative;
 }
 
 .logo {
@@ -15,16 +16,12 @@
   font-size: 1.25rem;
 }
 
-.logoImage {
-  width: 140px;
-  height: 130px;
-}
-
 /* Main Content */
 .main {
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  position: relative;
 }
 
 .loginSection {
@@ -93,7 +90,6 @@
 .rememberMe {
   display: flex;
   align-items: center;
-  
 }
 
 .toggleLabel {
@@ -111,8 +107,8 @@
 
 .toggleSlider {
   position: relative;
-  width: 44px;
-  height: 24px;
+  width: 33px;
+  height: 21px;
   background: var(--primary-color);
   border-radius: 12px;
   transition: background-color 0.2s;
@@ -123,8 +119,8 @@
   position: absolute;
   top: 2px;
   right: 2px;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 16px;
   background: white;
   border-radius: 50%;
   transition: transform 0.2s;
@@ -173,119 +169,49 @@
 
 /* Brand Section */
 .brandSection {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 90%;
   background: var(--ligth-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  z-index: 10;
   border-radius: 0 0 0 1.4rem;
-  height: 90%;
+  overflow: hidden;
 }
 
-.brandSection::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  background: 
-    /* Líneas curvas creadas con radial-gradient */ radial-gradient(
-        circle at 30% 60%,
-        rgba(255, 255, 255, 0.08) 0%,
-        transparent 25%
-      )
-      0 0,
-    radial-gradient(
-        circle at 70% 30%,
-        rgba(255, 255, 255, 0.05) 0%,
-        transparent 25%
-      )
-      0 0,
-    radial-gradient(
-        circle at 20% 80%,
-        rgba(255, 255, 255, 0.1) 0%,
-        transparent 30%
-      )
-      0 0;
-  animation: organicFlow 25s linear infinite alternate;
-  z-index: 0;
-}
-
-@keyframes organicFlow {
-  0% {
-    transform: translate(0%, 0%) rotate(0deg);
-    background-size: 40% 40%, 50% 50%, 60% 60%;
-  }
-  25% {
-    background-size: 45% 45%, 55% 55%, 65% 65%;
-  }
-  50% {
-    transform: translate(-5%, 5%) rotate(2deg);
-    background-size: 50% 50%, 60% 60%, 70% 70%;
-  }
-  75% {
-    background-size: 55% 55%, 65% 65%, 75% 75%;
-  }
-  100% {
-    transform: translate(5%, -5%) rotate(-2deg);
-    background-size: 60% 60%, 70% 70%, 80% 80%;
-  }
-}
-
-.brandSection::after {
-  content: "";
+/* Estilos para el fondo animado en brandSection */
+.backgroundContainer {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 1.1) 1px,
-      transparent 1px
-    )
-    0 0 / 30px 30px;
-  animation: particleMove 120s linear infinite;
-  mix-blend-mode: overlay;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-@keyframes particleMove {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 1000px 500px;
-  }
+.floatingPaths {
+  position: absolute;
+  inset: 0;
+}
+
+.backgroundSvg {
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .brandContent {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
-.brandLogo {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.lightningIcon {
-  width: 60px;
-  height: 60px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-}
-
-.brandText {
-  font-size: 3rem;
-  font-weight: 300;
-  color: white;
-  letter-spacing: -0.02em;
+.logoImage {
+  width: 210px;
+  height: 200px;
 }
 
 /* Footer */
@@ -336,10 +262,9 @@
   .brandSection {
     order: -1;
     min-height: 200px;
-  }
-
-  .brandText {
-    font-size: 2rem;
+    width: 100%;
+    position: relative;
+    border-radius: 0;
   }
 
   .headerContent {

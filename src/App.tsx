@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import { MenuLogin } from './components/Login-forms/MenuLogin';
+
 import SignIn from './components/Login-forms/singIn';
-// import Dashboard from './components/dashboard/Dashboard';
+import SignUp from './components/Login-forms/SingUp';
+// import { Layout } from './components/dashboard/Layout';
+import Dashboard from './components/dashboard/Dashboard';
 
 
 function App() {
@@ -10,8 +12,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<SignIn />} />
-         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-        <Route path="/signup" element={<MenuLogin />} />
+        <Route path="/dashboard" element={<Dashboard />} />   
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
       </Routes>
     </Router>

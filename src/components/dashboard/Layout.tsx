@@ -6,7 +6,7 @@ import Header from "../header/Header";
 import Sidebar from "../sidebar/sidebar";
 import Dashboard from "./Dashboard";
 import Modal from "../Metricspreview/Modal";
-import GenerateReport from "../report/GenerateReport";
+// import GenerateReport from "../report/GenerateReport";
 
 export function Layout() {
   const [activeView, setActiveView] = useState("dashboard");
@@ -25,21 +25,27 @@ export function Layout() {
   const renderContent = () => {
     switch (activeView) {
       case "dashboard":
-        return <Dashboard />;
+        return  
       case "edit-product":
+        return <Dashboard />;
+      case "add-item":
       case "inventory":
+        return <Dashboard />;
       case "users":
         return <Dashboard />;
       case "generate-report":
-        return <GenerateReport />; 
+        // return <GenerateReport />; 
       default:
-        return <Dashboard />;
+        return <Layout />;
     }
   };
 
   return (
+     console.log("Rendering Layout with activeView:", activeView), // Para depuración
     <div className={styles.dashboard}>
+      
       <Sidebar onMenuClick={handleMenuClick} activeView={activeView} />
+        
       <div className={styles.mainContent}>
         <Header />
         <div className={styles.contentArea}>{renderContent()}</div>
