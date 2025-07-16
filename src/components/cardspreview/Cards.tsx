@@ -14,7 +14,7 @@ export default function Cards() {
         <div className={styles.circle6}></div>
       </div>
 
-      {/* <div className={styles.cardsGrid}>
+      <div className={styles.cardsGrid}>
         <div className={styles.card}>
           <div className={styles.cardIcon}>
             <BarChart3 size={18} />
@@ -44,7 +44,7 @@ export default function Cards() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }

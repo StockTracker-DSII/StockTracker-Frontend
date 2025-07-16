@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "../../styles/Dashboard.module.css";
 import Cards from "../cardspreview/Cards";
 import ProductsTable from "../ProductsTable/ProductsTable";
