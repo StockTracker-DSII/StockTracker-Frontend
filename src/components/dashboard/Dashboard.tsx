@@ -1,6 +1,5 @@
 import styles from "../../styles/Dashboard.module.css";
 import Cards from "../cardspreview/Cards";
-import Orders from "../Ordes/Ordes";
 import ProductsTable from "../ProductsTable/ProductsTable";
 import GenerateReport from "../report/GenerateReport";
 

@@ -30,8 +30,10 @@ export function Layout() {
       case "inventory":
       case "users":
         return <Dashboard />;
+        /*
       case "generate-report":
-        return <GenerateReport />; 
+        return <GenerateReport />;// no hay suficiente información para implementar este caso
+         */
       default:
         return <Dashboard />;
     }
