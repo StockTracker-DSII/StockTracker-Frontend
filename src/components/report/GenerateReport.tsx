@@ -37,7 +37,6 @@ export default function GenerateReport() {
   if (error) return <p style={{ padding: "24px" }}>Error: {error}</p>;
 
   return (
-    <div style={{ padding: "24px 40px", display: "flex", justifyContent: "center" }}>
       <div className={styles.productsContainer}>
         <div className={styles.header}>
           <h2 className={styles.title}>Reports: Productos más vendidos</h2>
@@ -79,6 +78,5 @@ export default function GenerateReport() {
           </div>
         </div>
       </div>
-    </div>
   );
 }

@@ -2,6 +2,7 @@ import styles from "../../styles/Dashboard.module.css";
 import Cards from "../cardspreview/Cards";
 import Orders from "../Ordes/Ordes";
 import ProductsTable from "../ProductsTable/ProductsTable";
+import GenerateReport from "../report/GenerateReport";
 
 
 /**
@@ -44,7 +45,7 @@ export default function Dashboard() {
             <div className={styles.rightPanel}>
               {/* Sección de Resumen de Pedidos - Muestra transacciones recientes */}
               <div className={styles.OrdersOverview}>
-                <Orders />
+                <GenerateReport />
               </div>
               
               {/* Sección de Tarjetas de Métricas - Indicadores clave de rendimiento */}

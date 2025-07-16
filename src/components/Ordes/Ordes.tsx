@@ -15,7 +15,7 @@ export default function Orders() {
     <div className={styles.ordersContainer}>
       <div className={styles.header}>
         <h3 className={styles.title}>Orders overview</h3>
-        <span className={styles.growth}>+30%</span>
+        <span className={styles.growth}>+100%</span>
       </div>
 
       <div className={styles.ordersList}>
