@@ -34,7 +34,7 @@ const menuItems = [
   { icon: List, label: "List Products", key: "list-products" },
   { icon: CreditCard, label: "Billing", key: "billing" },
   { icon: Clock, label: "Record", key: "record" },
-  { icon: FileText, label: "Generate report", key: "generate-report" },
+  /*{ icon: FileText, label: "Generate report", key: "generate-report" },*/
   { icon: Users, label: "Users", key: "users" },
   { icon: Database, label: "Tables", key: "tables" },
   { icon: Settings, label: "Menu settings", key: "menu-settings" },

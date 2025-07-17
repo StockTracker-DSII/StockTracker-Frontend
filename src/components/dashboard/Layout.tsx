@@ -33,8 +33,10 @@ export function Layout() {
         return <Dashboard />;
       case "users":
         return <Dashboard />;
+        /*
       case "generate-report":
-        // return <GenerateReport />; 
+        return <GenerateReport />;
+         */
       default:
         return <Layout />;
     }
